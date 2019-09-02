@@ -58,5 +58,8 @@ public class SplitWiseTest {
         Assertions.assertFalse(trip1.updateGetGivesForSelected(0.0f));
     }
 
-
+    @Test
+    void givenSplitMoneyOneForSelected_WhenUpdateList_ThenReturnTrue() {
+        Assertions.assertTrue(trip1.updateGetGivesForSelected(1.0f));
+    }
 }

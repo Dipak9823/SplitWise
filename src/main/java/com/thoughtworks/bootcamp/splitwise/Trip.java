@@ -33,8 +33,15 @@ public class Trip implements Expenditure {
 
     @Override
     public boolean updateGetGivesForSelected(float splitMoney) {
-
-        return false;
+        if(splitMoney==0) {
+            return false;
+        }
+        float get=spendMoney-splitMoney;
+        spender.gets=get;
+        for(Person p:taker) {
+            p.gives=splitMoney;
+        }
+        return true;
     }
 
 
