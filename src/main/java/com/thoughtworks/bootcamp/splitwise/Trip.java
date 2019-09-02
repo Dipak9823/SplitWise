@@ -2,11 +2,11 @@ package com.thoughtworks.bootcamp.splitwise;
 
 import java.util.List;
 
-public class Trip {
+public class Trip implements Expenditure {
     Person spender;
     float spendMoney;
     List<Person> taker;
-    float splitMoney;
+    //float splitMoney;
     //Split split;
     Trip(float spendMoney, List<Person> taker, Person spender) {
         this.spender=spender;
@@ -15,14 +15,12 @@ public class Trip {
     }
 
     public float split() {
-        splitMoney=spendMoney/taker.size();
+        float splitMoney=spendMoney/taker.size();
         return splitMoney;
     }
 
-
-
-
-
-
-
+    @Override
+    public boolean updateGetGives(float splitMoney) {
+        return false;
+    }
 }
