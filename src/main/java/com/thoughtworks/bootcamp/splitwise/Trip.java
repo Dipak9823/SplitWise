@@ -21,6 +21,9 @@ public class Trip implements Expenditure {
 
     @Override
     public boolean updateGetGives(float splitMoney) {
-        return false;
+        if(splitMoney==0) {
+            return false;
+        }
+        return true;
     }
 }
