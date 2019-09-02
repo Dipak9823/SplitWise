@@ -24,6 +24,11 @@ public class Trip implements Expenditure {
         if(splitMoney==0) {
             return false;
         }
+        float get=spendMoney-splitMoney;
+        spender.gets=get;
+        for(Person p:taker) {
+            p.gives=splitMoney;
+        }
 
         return true;
     }
