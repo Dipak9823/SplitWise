@@ -15,7 +15,8 @@ public class Trip {
     }
 
     public float split() {
-        return 0;
+        splitMoney=spendMoney/taker.size();
+        return splitMoney;
     }
 
 }

@@ -20,4 +20,17 @@ public class SplitWiseTest {
         Assertions.assertEquals(0,trip.split());
     }
 
+    @Test
+    void givenSpenderTakerWithThreeSpendMoney_WhenCalculateSplit_ThenReturnSplitOne() {
+        Person person1=new Person(101,"A",0,0);
+        Person person2=new Person(102,"B",0,0);
+        Person person3=new Person(103,"C",0,0);
+        List<Person> personList=new ArrayList<>();
+        personList.add(person1);
+        personList.add(person2);
+        personList.add(person3);
+        Trip trip=new Trip(3,personList,personList.get(0));
+        Assertions.assertEquals(1,trip.split());
+    }
+
 }
