@@ -19,4 +19,10 @@ public class Trip {
         return splitMoney;
     }
 
+
+
+
+
+
+
 }
