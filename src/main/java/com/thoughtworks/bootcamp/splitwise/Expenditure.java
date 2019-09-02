@@ -1,6 +1,7 @@
 package com.thoughtworks.bootcamp.splitwise;
 
 public interface Expenditure {
-    boolean updateGetGives(float splitMoney);
-    boolean print();
+    boolean updateGetGivesForAll(float splitMoney);
+    boolean updateGetGivesForSelected(float splitMoney);
+
 }

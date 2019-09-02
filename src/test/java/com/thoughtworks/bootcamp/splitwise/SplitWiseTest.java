@@ -44,15 +44,19 @@ public class SplitWiseTest {
     }
 
     @Test
-    void givenSplitMoneyZero_WhenUpdateList_ThenReturnFalse() {
-        Assertions.assertFalse(trip1.updateGetGives(0.0f));
+    void givenSplitMoneyZeroForAll_WhenUpdateList_ThenReturnFalse() {
+        Assertions.assertFalse(trip1.updateGetGivesForAll(0.0f));
     }
 
     @Test
-    void givenSplitMoneyOne_WhenUpdateList_ThenReturnTrue() {
-        Assertions.assertTrue(trip1.updateGetGives(1.0f));
+    void givenSplitMoneyOneForAll_WhenUpdateList_ThenReturnTrue() {
+        Assertions.assertTrue(trip1.updateGetGivesForAll(1.0f));
     }
 
+    @Test
+    void givenSplitMoneyZeroForSelected_WhenUpdateList_ThenReturnFalse() {
+        Assertions.assertFalse(trip1.updateGetGivesForSelected(0.0f));
+    }
 
 
 }

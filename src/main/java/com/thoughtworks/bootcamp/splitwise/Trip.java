@@ -6,8 +6,7 @@ public class Trip implements Expenditure {
     Person spender;
     float spendMoney;
     List<Person> taker;
-    //float splitMoney;
-    //Split split;
+
     Trip(float spendMoney, List<Person> taker, Person spender) {
         this.spender=spender;
         this.taker =taker;
@@ -20,7 +19,7 @@ public class Trip implements Expenditure {
     }
 
     @Override
-    public boolean updateGetGives(float splitMoney) {
+    public boolean updateGetGivesForAll(float splitMoney) {
         if(splitMoney==0) {
             return false;
         }
@@ -29,14 +28,15 @@ public class Trip implements Expenditure {
         for(Person p:taker) {
             p.gives=splitMoney;
         }
-
         return true;
     }
 
     @Override
-    public boolean print() {
+    public boolean updateGetGivesForSelected(float splitMoney) {
+
         return false;
     }
+
 
 
 }
