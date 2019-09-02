@@ -24,6 +24,14 @@ public class Trip implements Expenditure {
         if(splitMoney==0) {
             return false;
         }
+
         return true;
     }
+
+    @Override
+    public boolean print() {
+        return false;
+    }
+
+
 }

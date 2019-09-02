@@ -8,17 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SplitWiseTest {
+
     Person person1=new Person(101,"A",0,0);
     Person person2=new Person(102,"B",0,0);
     Person person3=new Person(103,"C",0,0);
     Trip trip1;
+    List<Person> personList;
     @BeforeEach
     void setUp(){
-        List<Person> personList1=new ArrayList<>();
-        personList1.add(person1);
-        personList1.add(person2);
-        personList1.add(person3);
-        trip1=new Trip(0,personList1,personList1.get(0));
+        personList=new ArrayList<>();
+        personList.add(person1);
+        personList.add(person2);
+        personList.add(person3);
+        trip1=new Trip(0,personList,personList.get(0));
 
     }
     @Test
@@ -28,10 +30,6 @@ public class SplitWiseTest {
 
     @Test
     void givenSpenderTakerWithThreeSpendMoney_WhenCalculateSplit_ThenReturnSplitOne() {
-        List<Person> personList=new ArrayList<>();
-        personList.add(person1);
-        personList.add(person2);
-        personList.add(person3);
         Trip trip=new Trip(3,personList,personList.get(0));
         Assertions.assertEquals(1,trip.split());
     }
@@ -39,7 +37,6 @@ public class SplitWiseTest {
     @Test
     void givenSpenderSpecifiedTakerWithTwoSpendMoney_WhenCalculateSplit_ThenReturnSplitOne() {
         List<Person> personList=new ArrayList<>();
-        //personList.add(person1);
         personList.add(person2);
         personList.add(person3);
         Trip trip=new Trip(2,personList,person1);
@@ -55,5 +52,7 @@ public class SplitWiseTest {
     void givenSplitMoneyOne_WhenUpdateList_ThenReturnTrue() {
         Assertions.assertTrue(trip1.updateGetGives(1.0f));
     }
+
+
 
 }

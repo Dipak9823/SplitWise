@@ -3,8 +3,8 @@ package com.thoughtworks.bootcamp.splitwise;
 public class Person {
     int id;
     String name;
-    int gives;
-    int gets;
+    float gives;
+    float gets;
 
     public Person(int id, String name, int gives,int gets) {
         this.id=id;
